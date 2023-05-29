@@ -34,7 +34,7 @@ const App: React.FC = () => {
 
   return (
     <div className="container">
-      <h1>VetApp</h1>
+      <h1>VetAdvice</h1>
       <div className="question-container">
         {'question' in currentQuestion ? (
           <div className="question-box">
