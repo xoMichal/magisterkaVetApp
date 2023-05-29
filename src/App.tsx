@@ -113,20 +113,19 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
       (currentQuestion as Question).question === "Czy kot ma powiększenie obrysu jamy brzusznej?"
       ) {
         setCurrentQuestion( {
-      question: "Czy w okolicy żołądkoa jest wypuk bębękowy?",
+      question: "Czy w okolicy żołądka jest wypuk bębękowy?",
       answers: ["tak", "nie"],
       })
       }
-      
       if (
       previousAnswerRef.current === "tak" &&
-      (currentQuestion as Question).question === "Czy w okolicy żołądkoa jest wypuk bębękowy?"
+      (currentQuestion as Question).question === "Czy w okolicy żołądka jest wypuk bębękowy?"
       ) {
         setCurrentQuestion({diagnose: "Diagnoza: Skręt żołądka"})
       }
       if (
       previousAnswerRef.current === "nie" &&
-      (currentQuestion as Question).question === "Czy w okolicy żołądkoa jest wypuk bębękowy?"
+      (currentQuestion as Question).question === "Czy w okolicy żołądka jest wypuk bębękowy?"
       ) {
         setCurrentQuestion( {
       question: "Czy występuje bladość błon śluzowych i ostry brzuch?",
@@ -153,20 +152,20 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
       previousAnswerRef.current === "tak" &&
       (currentQuestion as Question).question === "Czy zwierzę miało kontakt z trucizną?"
       ) {
-        setCurrentQuestion({diagnose: "Diagnoza: Zatrucie"})
+        setCurrentQuestion({diagnose: "Diagnoza: Zatrucie trucizną"})
       }
       if (
       previousAnswerRef.current === "nie" &&
       (currentQuestion as Question).question === "Czy zwierzę miało kontakt z trucizną?"
       ) {
         setCurrentQuestion( {
-      question: "Czy zwierzę jest płuci zeńskiej?",
+      question: "Czy zwierzę jest płuci żeńskiej?",
       answers: ["tak", "nie"],
       })
       }
       if (
       previousAnswerRef.current === "nie" &&
-      (currentQuestion as Question).question === "Czy zwierzę jest płuci zeńskiej?"
+      (currentQuestion as Question).question === "Czy zwierzę jest płuci żeńskiej?"
       ) {
         setCurrentQuestion( {
       question: "Czy w badaniu RTG/USG widać zmiany w prostacie?",
@@ -218,7 +217,7 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
       }
       if (
       previousAnswerRef.current === "tak" &&
-      (currentQuestion as Question).question === "Czy zwierzę jest płuci zeńskiej?"
+      (currentQuestion as Question).question === "Czy zwierzę jest płuci żeńskiej?"
       ) {
         setCurrentQuestion( {
       question: "Czy w badaniu RTG/USG widać zmiany w macicy/jajnikach?",
@@ -240,19 +239,19 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
       ) {
       
         setCurrentQuestion( {
-      question: "Czy w macicy widać sympomy ciązy?",
+      question: "Czy w macicy widać sympomy ciąży?",
       answers: ["tak", "nie"],
       })
       }
       if (
       previousAnswerRef.current === "tak" &&
-      (currentQuestion as Question).question === "Czy w macicy widać sympomy ciązy?"
+      (currentQuestion as Question).question === "Czy w macicy widać sympomy ciąży?"
       ) {
         setCurrentQuestion({diagnose: "Diagnoza: Ciąza"})
       }
       if (
       previousAnswerRef.current === "nie" &&
-      (currentQuestion as Question).question === "Czy w macicy widać sympomy ciązy?"
+      (currentQuestion as Question).question === "Czy w macicy widać sympomy ciąży?"
       ) {
         setCurrentQuestion({diagnose: "Diagnoza: rozrost endometrium"})
       }
@@ -285,46 +284,46 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
       "Czy u kota w momencie wystąpienia problemów atak pojawił się po raz pierwszy?"
       ) {
         setCurrentQuestion( {
-      question: "Czy poziom insuliny jest podwyszony lub prawidłowy?",
+      question: "Czy poziom insuliny jest podwyższony lub prawidłowy?",
       answers: ["tak", "nie"],
       })
       }
       if (
       previousAnswerRef.current === "tak" &&
-      (currentQuestion as Question).question === "Czy poziom insuliny jest podwyszony lub prawidłowy?"
+      (currentQuestion as Question).question === "Czy poziom insuliny jest podwyższony lub prawidłowy?"
       ) {
         setCurrentQuestion({diagnose: "Diagnoza: Wyspiak trzustkowy!"})
       }
       if (
       previousAnswerRef.current === "nie" &&
-      (currentQuestion as Question).question === "Czy poziom insuliny jest podwyszony lub prawidłowy?"
+      (currentQuestion as Question).question === "Czy poziom insuliny jest podwyższony lub prawidłowy?"
       ) {
       
         setCurrentQuestion( {
-      question: "Czy poziom insuliny jest obnizony?",
+      question: "Czy poziom insuliny jest obniżony?",
       answers: ["tak", "nie"],
       })
       }
       if (
       previousAnswerRef.current === "nie" &&
-      (currentQuestion as Question).question === "Czy poziom insuliny jest obnizony?"
+      (currentQuestion as Question).question === "Czy poziom insuliny jest obniżony?"
       ) {
         setCurrentQuestion({diagnose: "Postępowanie: Proszę wykonać USG narządów wewnętrznych"})
       }
       if (
       previousAnswerRef.current === "tak" &&
-      (currentQuestion as Question).question === "Czy poziom insuliny jest obnizony?"
+      (currentQuestion as Question).question === "Czy poziom insuliny jest obniżony?"
       ) {
         setCurrentQuestion( {
       question:
-      "Czy poziom mocznika jest obnoiony a parametry wątrobowe są podwyszone?",
+      "Czy poziom mocznika jest obnoiony a parametry wątrobowe są podwyższone?",
       answers: ["tak", "nie"],
       })
       }
       if (
       previousAnswerRef.current === "tak" &&
       (currentQuestion as Question).question ===
-      "Czy poziom mocznika jest obnoiony a parametry wątrobowe są podwyszone?"
+      "Czy poziom mocznika jest obnoiony a parametry wątrobowe są podwyższone?"
       ) {
         setCurrentQuestion({diagnose: "Diagnoza: Hepatopatia."})
       }
@@ -332,7 +331,7 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
       previousAnswerRef.current === "nie" &&
       
       (currentQuestion as Question).question ===
-      "Czy poziom mocznika jest obnoiony a parametry wątrobowe są podwyszone?"
+      "Czy poziom mocznika jest obnoiony a parametry wątrobowe są podwyższone?"
       ) {
         setCurrentQuestion( {
       question:
@@ -367,13 +366,13 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
       (currentQuestion as Question).question ===
       "Czy kot zjadł coś podejrzeanego lub mógł mieć kontakt z substancją trującą?"
       ) {
-        setCurrentQuestion({diagnose: "Diagnoza: Podejrzenie zatrucia i ewentualne wykazanie toksyn w organiźmie"})
+        setCurrentQuestion({diagnose: "Diagnoza: Podejrzenie zatrucia. Ewentualne wykazanie toksyn w organiźmie"})
       }
       if (
       previousAnswerRef.current === "tak" &&
       (currentQuestion as Question).question === "Czy mozesz stwierdzić u kota stan padaczkowy?"
       ) {
-        setCurrentQuestion({diagnose: "Postępowanie: lecz doraźnie, pobierz krew do badań."})
+        setCurrentQuestion({diagnose: "Postępowanie: Lecz doraźnie, pobierz krew do badań."})
       }
       if (
       previousAnswerRef.current === "pies" &&
@@ -405,14 +404,14 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
       }
       if (previousAnswerRef.current === "tak" && (currentQuestion as Question).question === "Czy u psa wystpuje świąd?") {
         setCurrentQuestion( {
-      question: "Czy znaleziono pasozyty?",
+      question: "Czy znaleziono pasożyty?",
       answers: ["nie", "tak"],
       })
       }
-      if (previousAnswerRef.current === "tak" && (currentQuestion as Question).question === "Czy znaleziono pasozyty?") {
-        setCurrentQuestion({diagnose: "Diagnoza: Pasoyty. Postępowanie: Zweryfikować pasoyty i zastosować odpowiednie leczenie przeciwpasozytnicze"})
+      if (previousAnswerRef.current === "tak" && (currentQuestion as Question).question === "Czy znaleziono pasożyty?") {
+        setCurrentQuestion({diagnose: "Diagnoza: Pasożyty. Postępowanie: Zweryfikować pasożyty i zastosować odpowiednie leczenie przeciwpasożytnicze"})
       }
-      if (previousAnswerRef.current === "nie" && (currentQuestion as Question).question === "Czy znaleziono pasozyty?") {
+      if (previousAnswerRef.current === "nie" && (currentQuestion as Question).question === "Czy znaleziono pasożyty?") {
         setCurrentQuestion( {
       question:
       "Postępowanie: zastosowanie profilaktycznego zwalczania pcheł. Czy świąd ustał?",
@@ -423,25 +422,25 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
       previousAnswerRef.current === "tak" &&
       (currentQuestion as Question).question ===
       
-      "Postępowanie: zastosowanie profilaktycznego zwalczania pcheł. Czy świąd ustał?"
+      "Postępowanie: Zastosowanie profilaktycznego zwalczania pcheł. Czy świąd ustał?"
       ) {
-        setCurrentQuestion({diagnose: "Diagnoza: Pchły. Postępowanie: pouczyć właściciela odpowiednim planem postępowania"})
+        setCurrentQuestion({diagnose: "Diagnoza: Pchły. Postępowanie: Zastosowanć odpowiednie leczenie"})
       }
       if (
       previousAnswerRef.current === "nie" &&
       (currentQuestion as Question).question ===
-      "Postępowanie: zastosowanie profilaktycznego zwalczania pcheł. Czy świąd ustał?"
+      "Postępowanie: Zastosowanie profilaktycznego zwalczania pcheł. Czy świąd ustał?"
       ) {
         setCurrentQuestion( {
       question:
-      "Postępowanie: proszę wykonać badanie poznawcze na obecność świerzbu. Czy znaleziono objawy świerzbu",
+      "Postępowanie: Wykonać badanie poznawcze na obecność świerzbu. Czy znaleziono objawy świerzbu",
       answers: ["nie", "tak"],
       })
       }
       if (
       previousAnswerRef.current === "tak" &&
       (currentQuestion as Question).question ===
-      "Postępowanie: proszę wykonać badanie poznawcze na obecność świerzbu. Czy znaleziono objawy świerzbu"
+      "Postępowanie: Wykonać badanie poznawcze na obecność świerzbu. Czy znaleziono objawy świerzbu"
       ) {
         setCurrentQuestion( {
       question:
@@ -452,26 +451,26 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
       if (
       previousAnswerRef.current === "nie" &&
       (currentQuestion as Question).question ===
-      "Postępowanie: proszę wykonać badanie poznawcze na obecność świerzbu. Czy znaleziono objawy świerzbu?"
+      "Postępowanie: Wykonać badanie poznawcze na obecność świerzbu. Czy znaleziono objawy świerzbu?"
       
       ) {
         setCurrentQuestion( {
       question:
-      "Postępowanie: proszę wykonać cytologię.Czy cytologia wykazała brak mikroorganizmów?",
+      "Postępowanie: Wykonać cytologię. Czy cytologia wykazała brak mikroorganizmów?",
       answers: ["nie", "tak"],
       })
       }
       if (
       previousAnswerRef.current === "tak" &&
       (currentQuestion as Question).question ===
-      "Postępowanie: proszę wykonać cytologię.Czy cytologia wykazała brak mikroorganizmów?"
+      "Postępowanie: Wykonać cytologię. Czy cytologia wykazała brak mikroorganizmów?"
       ) {
         setCurrentQuestion({diagnose: "Diagnoza: alergia. Postępowanie: proszę zastosować dietę eliminacyjną"})
       }
       if (
       previousAnswerRef.current === "nie" &&
       (currentQuestion as Question).question ===
-      "Postępowanie: proszę wykonać cytologię.Czy cytologia wykazała brak mikroorganizmów?"
+      "Postępowanie: Wykonać cytologię. Czy cytologia wykazała brak mikroorganizmów?"
       ) {
         setCurrentQuestion( {
       question: "Czy cytologia wykazała bakterie?",
@@ -489,7 +488,7 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
       previousAnswerRef.current === "nie" &&
       (currentQuestion as Question).question === "Czy cytologia wykazała bakterie?"
       ) {
-        setCurrentQuestion({diagnose: "Niestety nie mam wiedzy na ten temat, nie mogę pomóc"})
+        setCurrentQuestion({diagnose: "Brak rozwiniętego modułu diagnostyki dla danego przypadku."})
       }
       if (previousAnswerRef.current === "nie" && (currentQuestion as Question).question === "Czy u psa wystpuje świąd?") {
         setCurrentQuestion( {
@@ -523,7 +522,7 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
       })
       }
       if (previousAnswerRef.current === "Tak" && (currentQuestion as Question).question === "Czy znaleziono owrzodzenia?") {
-        setCurrentQuestion({diagnose: "Postępowanie:Proszę wykonać cytologię. Prawdopodobna diagnoza:ropowica połączeń śluzowo-skórnych"})
+        setCurrentQuestion({diagnose: "Postępowanie:Wykonać cytologię. Prawdopodobna diagnoza:ropowica połączeń śluzowo-skórnych"})
       }
       if (previousAnswerRef.current === "Nie" && (currentQuestion as Question).question === "Czy znaleziono owrzodzenia?") {
         setCurrentQuestion( {
@@ -791,7 +790,7 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
       previousAnswerRef.current === "tak" &&
       (currentQuestion as Question).question === "Czy wszedł o własnych siłach?"
       ) {
-        setCurrentQuestion({diagnose:"Diagnoza wstępna: Pies jest poobijany, zleć dodatkowe badania"})
+        setCurrentQuestion({diagnose:"Postępowanie: Wykonaj RTG i opatrz rany"})
       
       }
       if (
@@ -863,7 +862,6 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
         setCurrentQuestion({diagnose: "Diagnoza: Zwierzę nie zyje"})
       }
       
-      // setCurrentQuestion({diagnose: "Dziękujemy za skorzystanie z naszej aplikacji. Wciśnij reset aby rozpocząć diagnozę"})
       };
 }
 
