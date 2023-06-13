@@ -23,17 +23,17 @@ const App: React.FC = () => {
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(false);
   const [klik, setKlik] = useState<number>(0)
   const [czasStart, setCzasStart] = useState(new Date().getTime())
+
   useEffect(() => {
     setIsButtonDisabled(false);
   }, [currentQuestion]);
 
-  const handleAnswerClick = rules(setIsButtonDisabled, previousAnswerRef, currentQuestion, setCurrentQuestion, klik, setKlik, czasStart, setCzasStart);
+
+  const handleAnswerClick = rules(setIsButtonDisabled, previousAnswerRef, currentQuestion, setCurrentQuestion, setKlik, klik, setCzasStart);
+
 
   const handleFinishClick = () => {
     setCurrentQuestion(initialQuestion);
-    setKlik(klik + 1);
-
-    // Oblicz czas trwania
     let czasTrwania: number = new Date().getTime() - czasStart;
     console.log('Liczba kliknięć: ' + klik);
     console.log('Czas trwania: ' + czasTrwania + ' ms');
@@ -75,16 +75,16 @@ const App: React.FC = () => {
 export default App;
 
 
-function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>>, previousAnswerRef: React.MutableRefObject<string>,
-  currentQuestion: CurrentQuestion, setCurrentQuestion: React.Dispatch<React.SetStateAction<CurrentQuestion>>, klik: number, setKlik: React.Dispatch<React.SetStateAction<number>>, czasStart: any, setCzasStart: React.Dispatch<React.SetStateAction<any>>) {
-  setKlik(klik + 1);
-  if (klik === 1) {
-    let startTime = new Date().getTime();
-    setCzasStart(startTime)
-  }
+
+function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>>, previousAnswerRef: React.MutableRefObject<string>, currentQuestion: CurrentQuestion, setCurrentQuestion: React.Dispatch<React.SetStateAction<CurrentQuestion>>, setKlik: React.Dispatch<React.SetStateAction<number>>, klik: number, setCzasStart: React.Dispatch<React.SetStateAction<number>>) {
   return (selectedAnswer: string) => {
     setIsButtonDisabled(true);
     previousAnswerRef.current = selectedAnswer;
+    setKlik(klik + 1);
+    if (klik === 1) {
+      let startTime = new Date().getTime();
+      setCzasStart(startTime);
+    }
 
     if (
       previousAnswerRef.current === "kot" &&
@@ -876,6 +876,5 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
     }
 
   };
-
 }
 
