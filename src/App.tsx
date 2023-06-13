@@ -435,14 +435,14 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
       previousAnswerRef.current === "tak" &&
       (currentQuestion as Question).question ===
 
-      "Postępowanie: Zastosowanie profilaktycznego zwalczania pcheł. Czy świąd ustał?"
+      "Postępowanie: zastosowanie profilaktycznego zwalczania pcheł. Czy świąd ustał?"
     ) {
       setCurrentQuestion({ diagnose: "Diagnoza: Pchły. Postępowanie: Zastosowanć odpowiednie leczenie" })
     }
     if (
       previousAnswerRef.current === "nie" &&
       (currentQuestion as Question).question ===
-      "Postępowanie: Zastosowanie profilaktycznego zwalczania pcheł. Czy świąd ustał?"
+      "Postępowanie: zastosowanie profilaktycznego zwalczania pcheł. Czy świąd ustał?"
     ) {
       setCurrentQuestion({
         question:
@@ -456,15 +456,14 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
       "Postępowanie: Wykonać badanie poznawcze na obecność świerzbu. Czy znaleziono objawy świerzbu"
     ) {
       setCurrentQuestion({
-        question:
-          "Diagnoza: świerzb. Postępowanie: Proszę zastosować leczenie przeciwświerzbowe",
-        answers: ["nie", "tak"],
+        diagnose:"Diagnoza: świerzb. Postępowanie: Proszę zastosować leczenie przeciwświerzbowe"
+
       })
     }
     if (
       previousAnswerRef.current === "nie" &&
       (currentQuestion as Question).question ===
-      "Postępowanie: Wykonać badanie poznawcze na obecność świerzbu. Czy znaleziono objawy świerzbu?"
+      "Postępowanie: Wykonać badanie poznawcze na obecność świerzbu. Czy znaleziono objawy świerzbu"
 
     ) {
       setCurrentQuestion({
