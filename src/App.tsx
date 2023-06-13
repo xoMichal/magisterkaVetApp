@@ -21,15 +21,22 @@ const App: React.FC = () => {
   const [currentQuestion, setCurrentQuestion] = useState<CurrentQuestion>(initialQuestion);
   const previousAnswerRef = useRef<string>('');
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(false);
-
+  const [klik, setKlik] = useState<number>(0)
+  const [czasStart,setCzasStart]= useState(new Date().getTime())
   useEffect(() => {
     setIsButtonDisabled(false);
   }, [currentQuestion]);
 
-  const handleAnswerClick = rules(setIsButtonDisabled, previousAnswerRef, currentQuestion, setCurrentQuestion);
+  const handleAnswerClick = rules(setIsButtonDisabled, previousAnswerRef, currentQuestion, setCurrentQuestion,klik, setKlik,czasStart,setCzasStart);
 
   const handleFinishClick = () => {
     setCurrentQuestion(initialQuestion);
+    setKlik(klik + 1);
+
+    // Oblicz czas trwania
+    let czasTrwania: number = new Date().getTime() - czasStart;
+    console.log('Liczba kliknięć: ' + klik);
+  console.log('Czas trwania: ' + czasTrwania + ' ms');
   };
 
   return (
@@ -68,8 +75,13 @@ const App: React.FC = () => {
 export default App;
 
 
-function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>>, previousAnswerRef: React.MutableRefObject<string>, currentQuestion: CurrentQuestion, setCurrentQuestion: React.Dispatch<React.SetStateAction<CurrentQuestion>>) {
-  return (selectedAnswer: string) => {
+function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>>, previousAnswerRef: React.MutableRefObject<string>, 
+  currentQuestion: CurrentQuestion, setCurrentQuestion: React.Dispatch<React.SetStateAction<CurrentQuestion>>, klik:number, setKlik: React.Dispatch<React.SetStateAction<number>>,czasStart:any, setCzasStart:React.Dispatch<React.SetStateAction<any>>) {
+    setKlik(klik + 1);
+    if(klik === 1) {
+      let startTime = new Date().getTime();
+      setCzasStart(startTime)}
+    return (selectedAnswer: string) => {
     setIsButtonDisabled(true);
     previousAnswerRef.current = selectedAnswer;
 
@@ -863,5 +875,6 @@ function rules(setIsButtonDisabled: React.Dispatch<React.SetStateAction<boolean>
       }
       
       };
-}
+
+    }
 
